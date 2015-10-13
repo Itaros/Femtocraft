@@ -10,11 +10,19 @@ import net.minecraft.item.Item
 object TestbedItems {
 
   var itemTestbedGenericNanite: Item = null
+  var itemTestbedSomedevice: Item = null
 
   def register(tab: CreativeTabs {def getTabIconItem: Item}): Unit = {
-    itemTestbedGenericNanite = new GenericItem()
-    GameRegistry.registerItem(itemTestbedGenericNanite, "nanitecontainer_generic")
-    itemTestbedGenericNanite.setCreativeTab(tab)
+    itemTestbedGenericNanite = itemreg("nanitecontainer_generic",tab)
+    itemTestbedSomedevice = itemreg("somedevice",tab)
+  }
+
+  private def itemreg(name:String, tab:CreativeTabs):Item={
+    var item = new GenericItem()
+    item.setUnlocalizedName(name)
+    GameRegistry.registerItem(item,name)
+    item.setCreativeTab(tab)
+    return item
   }
 
 }

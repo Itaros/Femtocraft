@@ -14,9 +14,10 @@ class GenericItem extends Item{
   private var icon:IIcon = null
 
   override def registerIcons(ir:IIconRegister): Unit = {
-    icon = ir.registerIcon(Femtocraft.ID + ":" + "nanitecontainer_generic")
+    icon = ir.registerIcon(Femtocraft.ID+":"+this.getUnlocalizedName)
   }
 
   override def getIconIndex(p_77650_1_ : ItemStack): IIcon = icon
 
+  override def getIcon(stack: ItemStack, pass: Int): IIcon = icon
 }
