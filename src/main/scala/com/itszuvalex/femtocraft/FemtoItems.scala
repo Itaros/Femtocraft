@@ -3,6 +3,7 @@ package com.itszuvalex.femtocraft
 import com.itszuvalex.femtocraft.core.Cyber.item.ItemBaseSeed
 import com.itszuvalex.femtocraft.core.Industry.item.ItemFrame
 import com.itszuvalex.femtocraft.core.Power.ItemPowerCrystal
+import com.itszuvalex.femtocraft.testbed.items.TestbedItems
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.item.Item
 
@@ -25,6 +26,8 @@ object FemtoItems {
 
     itemBaseSeed = new ItemBaseSeed().setCreativeTab(Femtocraft.tab)
     GameRegistry.registerItem(itemBaseSeed, "itemBaseSeed")
+
+    TestbedItems.register(Femtocraft.testbedTab)
   }
 
   def init(): Unit = {

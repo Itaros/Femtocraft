@@ -4,6 +4,7 @@ import com.itszuvalex.femtocraft.core.Cyber.{CyberMachineRegistry, Cybermaterial
 import com.itszuvalex.femtocraft.core.Industry.FrameMultiblockRegistry
 import com.itszuvalex.femtocraft.network.PacketHandler
 import com.itszuvalex.femtocraft.proxy.{ProxyCommon, ProxyGuiCommon}
+import com.itszuvalex.femtocraft.testbed.items.TestbedItems
 import com.itszuvalex.femtocraft.worldgen.FemtocraftOreGenerator
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
@@ -37,6 +38,10 @@ object Femtocraft {
 
   val tab = new CreativeTabs(Femtocraft.ID) {
     override def getTabIconItem: Item = Items.nether_star
+  }
+
+  val testbedTab = new CreativeTabs(Femtocraft.ID) {
+    override def getTabIconItem: Item = TestbedItems.itemTestbedGenericNanite
   }
 
   @EventHandler def preInit(event: FMLPreInitializationEvent): Unit = {
